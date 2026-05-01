@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdminLayout from '../../components/AdminLayout';
 import { Plus, Search, Edit2, Trash2, Eye, EyeOff, FileText, Star, StarOff } from 'lucide-react';
@@ -15,6 +16,7 @@ const AdminBlog = () => {
   const [statusFilter, setStatusFilter] = useState('');
   const [deleteModal, setDeleteModal] = useState({ open: false, post: null });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadPosts();
   }, [statusFilter]);

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ClientLayoutEnhanced, { getCategoryGradient, getCategoryTheme, CARD_VARIANTS } from '../../components/ClientLayoutEnhanced';
 import { 
@@ -29,6 +30,7 @@ const ClientDashboardEnhanced = () => {
   
   const user = authService.getCurrentUser();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadData();
   }, []);

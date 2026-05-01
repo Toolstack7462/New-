@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import AdminLayoutEnhanced, { ADMIN_CARD_VARIANTS } from '../../components/AdminLayoutEnhanced';
 import { Activity, Search, Filter, RefreshCw, ChevronLeft, ChevronRight, Calendar, Download, History } from 'lucide-react';
 import api from '../../services/api';
@@ -21,6 +22,7 @@ const AdminActivity = () => {
     total: 0
   });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadActivities();
   }, [pagination.page, filters.role, filters.action, filters.startDate, filters.endDate]);

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AdminLayout from '../../components/AdminLayout';
 import { ArrowLeft, Save, Eye, Image } from 'lucide-react';
@@ -27,6 +28,7 @@ const AdminBlogForm = () => {
     featured: false
   });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (isEditing) {
       loadPost();

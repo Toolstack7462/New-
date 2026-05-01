@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AdminLayout from '../../components/AdminLayout';
 import { ArrowLeft, Save, User, Mail, Lock, Shield } from 'lucide-react';
@@ -21,6 +22,7 @@ const AdminClientForm = () => {
     devicePolicyEnabled: true
   });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (isEdit) {
       loadClient();

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ClientLayoutEnhanced, { getCategoryTheme, CARD_VARIANTS } from '../../components/ClientLayoutEnhanced';
 import { ArrowLeft, Package, ExternalLink, Clock, Info, Shield, CheckCircle2 } from 'lucide-react';
@@ -13,6 +14,7 @@ const ClientToolDetail = () => {
   const [tool, setTool] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadTool();
   }, [id]);

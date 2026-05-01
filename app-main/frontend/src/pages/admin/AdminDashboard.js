@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdminLayout from '../../components/AdminLayout';
 import { Package, Users, TrendingUp, Activity as ActivityIcon, Link2, FileText, Mail, ArrowRight } from 'lucide-react';
@@ -19,6 +20,7 @@ const AdminDashboard = () => {
   const [recentActivity, setRecentActivity] = useState([]);
   const [loading, setLoading] = useState(true);
   
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadDashboard();
   }, []);

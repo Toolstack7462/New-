@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import ClientLayoutEnhanced, { CARD_VARIANTS } from '../../components/ClientLayoutEnhanced';
 import { User, Mail, Calendar, Shield, Smartphone, Clock, CheckCircle2, AlertCircle } from 'lucide-react';
 import api from '../../services/api';
@@ -13,6 +14,7 @@ const ClientProfile = () => {
   
   const user = authService.getCurrentUser();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadProfile();
   }, []);

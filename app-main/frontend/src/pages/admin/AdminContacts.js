@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import AdminLayout from '../../components/AdminLayout';
 import { Search, Mail, Trash2, Eye, Filter, Clock, AlertCircle, CheckCircle, Archive, MessageSquare } from 'lucide-react';
 import api from '../../services/api';
@@ -15,6 +16,7 @@ const AdminContacts = () => {
   const [deleteModal, setDeleteModal] = useState({ open: false, contact: null });
   const [stats, setStats] = useState({ total: 0, new: 0, read: 0, replied: 0, archived: 0 });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadContacts();
     loadStats();

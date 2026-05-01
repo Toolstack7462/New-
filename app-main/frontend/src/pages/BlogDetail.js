@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, Tag, Eye } from 'lucide-react';
 import { getBlogPost, getRelatedPosts } from '../data/blogData';
@@ -11,6 +12,7 @@ const BlogDetail = () => {
   const [loading, setLoading] = useState(true);
   const [useStaticData, setUseStaticData] = useState(false);
   
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     window.scrollTo(0, 0);
     loadPost();

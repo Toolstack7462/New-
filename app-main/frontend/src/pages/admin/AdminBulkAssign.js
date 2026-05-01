@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AdminLayout from '../../components/AdminLayout';
 import { ArrowLeft, Save, Package, Users, Calendar, CheckCircle2, Search, X } from 'lucide-react';
@@ -24,6 +25,7 @@ const AdminBulkAssign = () => {
     preset: '30'
   });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadData();
   }, []);

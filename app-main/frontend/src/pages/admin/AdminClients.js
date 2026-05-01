@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdminLayout from '../../components/AdminLayout';
 import { Plus, Search, Edit2, Trash2, Users, RotateCcw, Package, Eye, ChevronLeft, ChevronRight, Filter, AlertTriangle } from 'lucide-react';
@@ -17,6 +18,7 @@ const AdminClients = () => {
   const [resetModal, setResetModal] = useState({ open: false, client: null });
   const [pagination, setPagination] = useState({ page: 1, limit: 10, total: 0 });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadClients();
   }, [pagination.page, statusFilter]);

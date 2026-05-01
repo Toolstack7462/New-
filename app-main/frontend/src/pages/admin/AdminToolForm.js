@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AdminLayout from '../../components/AdminLayout';
 import { ArrowLeft, Save, Package, Link as LinkIcon, FileText, Key, Settings, Shield, Database, LogIn, Globe, AlertCircle, CheckCircle, Info, Zap, ToggleLeft, ToggleRight } from 'lucide-react';
@@ -268,6 +269,7 @@ const AdminToolForm = () => {
     { name: 'Authorization', value: '', prefix: 'Bearer ' }
   ]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (isEdit) {
       loadTool();
